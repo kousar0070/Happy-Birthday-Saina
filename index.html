@@ -48,7 +48,7 @@
     </div>
   </div>
 
-  <audio id="song" loop preload="auto"><source src="aud.mp3" type="audio/mpeg"></audio>
+  <audio id="song" loop preload="auto"><source src="https://raw.githubusercontent.com/CODEING-BROS/happybday/main/aud.mp3" type="audio/mpeg"></audio>
 
   <main>
     <section class="hero">
@@ -69,10 +69,10 @@
     <h3 class="section-title">Our Moments 💗</h3>
     <p class="section-sub">Every memory with you is my favorite.</p>
     <section class="photos">
-      <div class="photo"><img src="photo1.jpg" alt="Our special memory" loading="lazy"></div>
-      <div class="photo"><img src="photo2.jpg" alt="Our special memory" loading="lazy"></div>
-      <div class="photo"><img src="photo3.jpg" alt="Our special memory" loading="lazy"></div>
-      <div class="photo"><img src="photo4.jpg" alt="Our special memory" loading="lazy"></div>
+      <div class="photo"><img src="photo1.webp" alt="Our special memory" loading="lazy"></div>
+      <div class="photo"><img src="photo2.webp" alt="Our special memory" loading="lazy"></div>
+      <div class="photo"><img src="photo3.webp" alt="Our special memory" loading="lazy"></div>
+      <div class="photo"><img src="photo4.webp" alt="Our special memory" loading="lazy"></div>
     </section>
 
     <section class="card ending">
@@ -90,32 +90,15 @@
     const startBtn=document.getElementById('startBtn');
     const musicBtn=document.getElementById('musicBtn');
     let playing=false;
-
     function setMusicLabel(){musicBtn.textContent=playing?'♫ Music on':'♫ Music off'}
     async function startSurprise(){
       document.body.classList.add('started');
       try{await song.play();playing=true}catch(e){playing=false}
-      setMusicLabel();
-      burst();
-      setInterval(makeFloater,950);
+      setMusicLabel(); burst(); setInterval(makeFloater,950);
     }
     startBtn.addEventListener('click',startSurprise);
-    musicBtn.addEventListener('click',async()=>{
-      if(playing){song.pause();playing=false}else{try{await song.play();playing=true}catch(e){}}
-      setMusicLabel();
-    });
-
-    function makeFloater(){
-      const el=document.createElement('div');
-      el.className='floater';
-      el.textContent=Math.random()>.35?'💗':'✨';
-      el.style.left=(Math.random()*94)+'vw';
-      el.style.fontSize=(16+Math.random()*18)+'px';
-      el.style.animationDuration=(5+Math.random()*4)+'s';
-      el.style.opacity=.45+Math.random()*.5;
-      document.body.appendChild(el);
-      setTimeout(()=>el.remove(),9500);
-    }
+    musicBtn.addEventListener('click',async()=>{if(playing){song.pause();playing=false}else{try{await song.play();playing=true}catch(e){}}setMusicLabel()});
+    function makeFloater(){const el=document.createElement('div');el.className='floater';el.textContent=Math.random()>.35?'💗':'✨';el.style.left=(Math.random()*94)+'vw';el.style.fontSize=(16+Math.random()*18)+'px';el.style.animationDuration=(5+Math.random()*4)+'s';el.style.opacity=.45+Math.random()*.5;document.body.appendChild(el);setTimeout(()=>el.remove(),9500)}
     function burst(){for(let i=0;i<16;i++)setTimeout(makeFloater,i*85)}
   </script>
 </body>
