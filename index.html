@@ -1,101 +1,256 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="theme-color" content="#140816" />
-  <title>Happy Birthday Saina 💗</title>
-  <style>
-    :root{--pink:#ff7eb3;--rose:#ff4f8b;--cream:#fff7fb;--ink:#fff;--glass:rgba(255,255,255,.12)}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:radial-gradient(circle at 15% 10%,#5a173d 0,transparent 32%),radial-gradient(circle at 85% 20%,#452261 0,transparent 30%),linear-gradient(160deg,#120713,#08040c 65%,#170716);overflow-x:hidden}
-    body.started .intro{opacity:0;visibility:hidden;pointer-events:none}
-    .intro{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:24px;background:linear-gradient(160deg,#160916,#08040c);transition:opacity .8s ease,visibility .8s ease}
-    .intro-card{text-align:center;max-width:430px}
-    .heart{width:118px;height:105px;position:relative;margin:0 auto 28px;transform:rotate(-45deg);background:linear-gradient(135deg,var(--rose),#ff9ec6);border-radius:18px 0 18px 18px;box-shadow:0 18px 70px rgba(255,79,139,.35);animation:beat 1.15s ease-in-out infinite}
-    .heart:before,.heart:after{content:"";position:absolute;width:118px;height:105px;background:inherit;border-radius:50%}
-    .heart:before{top:-58px;left:0}.heart:after{left:58px;top:0}
-    @keyframes beat{0%,100%{transform:rotate(-45deg) scale(1)}50%{transform:rotate(-45deg) scale(1.08)}}
-    .intro h1{font-family:Georgia,serif;font-size:clamp(34px,10vw,54px);line-height:1.02;margin:0 0 12px}.intro p{font-size:17px;line-height:1.55;opacity:.9;margin:0 0 22px}
-    .start{border:0;border-radius:999px;padding:14px 24px;font-size:17px;font-weight:800;color:#351023;background:#fff;box-shadow:0 12px 35px rgba(0,0,0,.25);cursor:pointer}
-    .tiny{font-size:12px;opacity:.62;margin-top:12px}
-    main{width:min(100%,860px);margin:auto;padding:26px 18px 70px;position:relative;z-index:2}
-    .hero{min-height:88vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:54px 12px 30px}
-    .date{display:inline-flex;padding:9px 16px;border:1px solid rgba(255,255,255,.22);border-radius:999px;background:var(--glass);backdrop-filter:blur(14px);font-weight:800;letter-spacing:.4px}
-    .hero h2{font-family:Georgia,serif;font-size:clamp(48px,13vw,82px);line-height:.95;margin:24px 0 14px;text-shadow:0 8px 28px rgba(0,0,0,.3)}
-    .hero .sub{font-size:clamp(18px,5vw,24px);opacity:.9;margin:0;max-width:620px;line-height:1.5}
-    .down{margin-top:34px;font-size:30px;animation:bob 1.5s ease-in-out infinite}@keyframes bob{50%{transform:translateY(8px)}}
-    .card{background:var(--glass);border:1px solid rgba(255,255,255,.16);border-radius:28px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 25px 70px rgba(0,0,0,.27);padding:26px;margin:20px 0}
-    .message{text-align:center;padding:34px 24px}.message h3{font-family:Georgia,serif;font-size:clamp(28px,7vw,42px);margin:0 0 18px}.message p{font-size:17px;line-height:1.75;margin:12px auto;max-width:660px}.signature{font-family:Georgia,serif;font-size:25px;font-weight:700;color:#ffd8e8;margin-top:24px}
-    .section-title{text-align:center;font-family:Georgia,serif;font-size:38px;margin:52px 0 8px}.section-sub{text-align:center;opacity:.75;margin:0 0 24px}
-    .photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}.photo{overflow:hidden;border-radius:24px;background:rgba(255,255,255,.08);box-shadow:0 16px 45px rgba(0,0,0,.25);line-height:0}.photo img{width:100%;height:auto;display:block;image-rendering:auto;transition:transform .7s ease}.photo:hover img{transform:scale(1.015)}
-    .ending{text-align:center;padding:46px 22px;margin-top:50px}.ending .cake{font-size:50px}.ending h3{font-family:Georgia,serif;font-size:clamp(34px,9vw,54px);margin:12px 0}.ending p{font-size:20px;line-height:1.55;margin:8px 0}.ending strong{color:#ffd7e7}
-    .music-btn{position:fixed;right:16px;bottom:18px;z-index:20;border:1px solid rgba(255,255,255,.22);background:rgba(20,8,22,.74);color:#fff;border-radius:999px;padding:11px 15px;font-size:14px;font-weight:800;backdrop-filter:blur(12px);display:none}.started .music-btn{display:block}
-    .floater{position:fixed;bottom:-40px;z-index:1;pointer-events:none;animation:floatUp linear forwards;filter:drop-shadow(0 4px 8px rgba(0,0,0,.2))}@keyframes floatUp{to{transform:translateY(-115vh) rotate(30deg);opacity:0}}
-    @media(max-width:620px){main{padding-left:12px;padding-right:12px}.hero{min-height:84vh}.card{padding:20px;border-radius:24px}.photos{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.photo{border-radius:16px}.message{padding:28px 19px}.message p{font-size:16px}.section-title{font-size:33px;margin-top:42px}}
-    @media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
-  </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#020326">
+    <title>Happy Birthday, Sin</title>	    
+    <link rel="preload" href="./aud-fast.mp3" as="audio" type="audio/mpeg">
+    <link type="text/css" rel="stylesheet" href="./file/default.css">
+    <script type="text/javascript" src="./file/jquery.min.js"></script>
+    <script type="text/javascript" src="./file/jscex.min.js"></script>
+    <script type="text/javascript" src="./file/jscex-parser.js"></script>
+    <script type="text/javascript" src="./file/jscex-jit.js"></script>
+    <script type="text/javascript" src="./file/jscex-builderbase.min.js"></script>
+    <script type="text/javascript" src="./file/jscex-async.min.js"></script>
+    <script type="text/javascript" src="./file/jscex-async-powerpack.min.js"></script>
+    <script type="text/javascript" src="./file/functions.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./file/love.js" charset="utf-8"></script>
+    <script>
+        function playAudio() {
+            var audio = document.getElementById("myAudio");
+            if (audio && audio.paused) {
+                var promise = audio.play();
+                if (promise && promise.catch) {
+                    promise.catch(function() {});
+                }
+            }
+        }
+    </script>
 </head>
 <body>
-  <div class="intro" id="intro">
-    <div class="intro-card">
-      <div class="heart" aria-hidden="true"></div>
-      <h1>For Saina 💗</h1>
-      <p>I made a little birthday surprise just for you.</p>
-      <button class="start" id="startBtn">Tap to open ❤️</button>
-      <div class="tiny">Turn your sound on 🎵</div>
+    <div id="main">
+        <div id="error"><a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a> (<a href="http://firefox.com.cn/download/">Firefox</a>)</div>
+        <audio preload="auto" playsinline="playsinline" height="100" width="100" id="myAudio">
+            <source src="aud-fast.mp3" type="audio/mpeg" />
+            <embed height="100" width="100" src="aud-fast.mp3" />
+        </audio>
+        <div id="wrap">
+            <div id="text">
+                <div id="code">
+                    <span class="say">My beautiful wife, Sin 💞</span><br>
+                    <span class="say">Happy Birthday 🎈</span><br>
+                    <span class="say">May Allah bless you 🍀</span><br>
+                    <span class="say">And give you endless happiness 💕</span><br>
+                    <span class="say">I love you ❤️</span><br>
+                    <span class="say">And I will always love you 🥺❤️</span><br>
+                    <span class="say">I hope you have the most beautiful day ❤️😘</span><br>
+                    <span class="say">Forever yours, Your Cos 💗</span><br>
+                </div>
+            </div>
+            <div id="clock-box">
+                <span id="clock">577 days 0 hours 0 minutes 0 seconds</span> <!-- Change to "6940 days..." if needed -->
+            </div>
+            <canvas id="canvas" width="1100" height="680"></canvas>
+        </div>
     </div>
-  </div>
 
-  <audio id="song" loop preload="auto"><source src="https://raw.githubusercontent.com/CODEING-BROS/happybday/main/aud.mp3" type="audio/mpeg"></audio>
+    <button id="memories-button" type="button" aria-label="Open our photos">
+        <img src="./memories/hero.webp" alt="" />
+        <span>Our photos ♥</span>
+    </button>
 
-  <main>
-    <section class="hero">
-      <div class="date">12 August ✨</div>
-      <h2>Happy Birthday<br>Saina 🎂💗</h2>
-      <p class="sub">To my beautiful wife — today is all about you.</p>
-      <div class="down">↓</div>
-    </section>
+    <div id="memory-reel" aria-hidden="true">
+        <button id="memory-close" type="button" aria-label="Close photos">×</button>
+        <div id="memory-card">
+            <div id="memory-slides">
+                <img class="memory-slide active" src="./memories/hero.webp" alt="Sin and Cos lying together on the grass" data-caption="My favorite place is always beside you." />
+                <img class="memory-slide" src="./memories/hills.webp" alt="Sin and Cos embracing in the green hills" data-caption="Every journey feels like home with you." />
+                <img class="memory-slide" src="./memories/black.webp" alt="Sin and Cos sharing a quiet moment" data-caption="The little moments mean everything to me." />
+                <img class="memory-slide" src="./memories/white.webp" alt="Sin and Cos smiling together" data-caption="Every version of us is my favorite." />
+                <img class="memory-slide" src="./memories/dance.webp" alt="Sin and Cos dancing at night" data-caption="I will always choose one more dance with you." />
+            </div>
+            <p id="memory-caption">My favorite place is always beside you.</p>
+            <div id="memory-controls">
+                <button id="memory-prev" type="button" aria-label="Previous photo">←</button>
+                <span id="memory-counter">1 / 5</span>
+                <button id="memory-next" type="button" aria-label="Next photo">→</button>
+            </div>
+        </div>
+    </div>
 
-    <section class="card message">
-      <h3>My Love ❤️</h3>
-      <p>You are the most beautiful part of my life. Every moment with you is special to me, and I’m so lucky to have you by my side.</p>
-      <p>May Allah always keep you happy, protect you, and fill your life with love, peace and endless happiness. 🤲❤️</p>
-      <p>I love you more than words can say. <strong>Happy Birthday, my love Saina! 🎂🥰❤️</strong></p>
-      <div class="signature">Forever yours, Kousar 💗</div>
-    </section>
+    <script>
+    (function() {
+        var canvas = $('#canvas');
+		var memoryIndex = 0;
+		var memorySlides = $('.memory-slide');
 
-    <h3 class="section-title">Our Moments 💗</h3>
-    <p class="section-sub">Every memory with you is my favorite.</p>
-    <section class="photos">
-      <div class="photo"><img src="photo1.webp" alt="Our special memory"></div>
-      <div class="photo"><img src="photo2.webp" alt="Our special memory"></div>
-      <div class="photo"><img src="photo3.webp" alt="Our special memory"></div>
-      <div class="photo"><img src="photo4.webp" alt="Our special memory"></div>
-    </section>
+		function showMemory(index) {
+			memoryIndex = (index + memorySlides.length) % memorySlides.length;
+			memorySlides.removeClass('active');
+			var active = memorySlides.eq(memoryIndex).addClass('active');
+			$('#memory-caption').text(active.attr('data-caption'));
+			$('#memory-counter').text((memoryIndex + 1) + ' / ' + memorySlides.length);
+		}
 
-    <section class="card ending">
-      <div class="cake">🎂</div>
-      <h3>Happy Birthday, Saina!</h3>
-      <p>May your smile always stay this beautiful. 💗</p>
-      <p><strong>Forever yours, Kousar 💗</strong></p>
-    </section>
-  </main>
+		$('#memories-button').on('click', function() {
+			playAudio();
+			$('#memory-reel').addClass('open').attr('aria-hidden', 'false');
+			showMemory(memoryIndex);
+		});
 
-  <button class="music-btn" id="musicBtn">♫ Music on</button>
+		$('#memory-close').on('click', function() {
+			$('#memory-reel').removeClass('open').attr('aria-hidden', 'true');
+		});
 
-  <script>
-    const song=document.getElementById('song');
-    const startBtn=document.getElementById('startBtn');
-    const musicBtn=document.getElementById('musicBtn');
-    let playing=false;
-    function setMusicLabel(){musicBtn.textContent=playing?'♫ Music on':'♫ Music off'}
-    async function startSurprise(){document.body.classList.add('started');try{await song.play();playing=true}catch(e){playing=false}setMusicLabel();burst();setInterval(makeFloater,950)}
-    startBtn.addEventListener('click',startSurprise);
-    musicBtn.addEventListener('click',async()=>{if(playing){song.pause();playing=false}else{try{await song.play();playing=true}catch(e){}}setMusicLabel()});
-    function makeFloater(){const el=document.createElement('div');el.className='floater';el.textContent=Math.random()>.35?'💗':'✨';el.style.left=(Math.random()*94)+'vw';el.style.fontSize=(16+Math.random()*18)+'px';el.style.animationDuration=(5+Math.random()*4)+'s';el.style.opacity=.45+Math.random()*.5;document.body.appendChild(el);setTimeout(()=>el.remove(),9500)}
-    function burst(){for(let i=0;i<16;i++)setTimeout(makeFloater,i*85)}
-  </script>
+		$('#memory-prev').on('click', function() { showMemory(memoryIndex - 1); });
+		$('#memory-next, #memory-slides').on('click', function() { showMemory(memoryIndex + 1); });
+		$(document).on('keydown', function(event) {
+			if (!$('#memory-reel').hasClass('open')) return;
+			if (event.key === 'Escape') $('#memory-close').click();
+			if (event.key === 'ArrowLeft') showMemory(memoryIndex - 1);
+			if (event.key === 'ArrowRight') showMemory(memoryIndex + 1);
+		});
+
+		function fitScene() {
+			var scale = Math.min(window.innerWidth / 1100, window.innerHeight / 680);
+			$('#wrap').css('transform', 'translate(-50%, -50%) scale(' + scale + ')');
+		}
+
+		fitScene();
+		$(window).on('resize orientationchange', fitScene);
+		document.getElementById('myAudio').load();
+		
+        if (!canvas[0].getContext) {
+            $("#error").show();
+            return false;
+        }
+
+        var width = canvas.width();
+        var height = canvas.height();        
+        canvas.attr("width", width);
+        canvas.attr("height", height);
+
+        var opts = {
+            seed: {
+                x: width / 2 - 20,
+                color: "rgb(190, 26, 37)",
+                scale: 2
+            },
+            branch: [
+                [535, 680, 570, 250, 500, 200, 30, 100, [
+                    [540, 500, 455, 417, 340, 400, 13, 100, [
+                        [450, 435, 434, 430, 394, 395, 2, 40]
+                    ]],
+                    [550, 445, 600, 356, 680, 345, 12, 100, [
+                        [578, 400, 648, 409, 661, 426, 3, 80]
+                    ]],
+                    [539, 281, 537, 248, 534, 217, 3, 40],
+                    [546, 397, 413, 247, 328, 244, 9, 80, [
+                        [427, 286, 383, 253, 371, 205, 2, 40],
+                        [498, 345, 435, 315, 395, 330, 4, 60]
+                    ]],
+                    [546, 357, 608, 252, 678, 221, 6, 100, [
+                        [590, 293, 646, 277, 648, 271, 2, 80]
+                    ]]
+                ]] 
+            ],
+            bloom: {
+                num: 700,
+                width: 1080,
+                height: 650,
+            },
+            footer: {
+                width: 1200,
+                height: 5,
+                speed: 10,
+            }
+        }
+
+        var tree = new Tree(canvas[0], width, height, opts);
+        var seed = tree.seed;
+        var foot = tree.footer;
+        var hold = 1;
+
+        canvas.click(function(e) {
+            playAudio();
+            var offset = canvas.offset(), x, y;
+            var bounds = canvas[0].getBoundingClientRect();
+            x = (e.clientX - bounds.left) * canvas[0].width / bounds.width;
+            y = (e.clientY - bounds.top) * canvas[0].height / bounds.height;
+            if (seed.hover(x, y)) {
+                hold = 0; 
+                canvas.unbind("click");
+                canvas.unbind("mousemove");
+                canvas.removeClass('hand');
+            }
+        }).mousemove(function(e) {
+            var offset = canvas.offset(), x, y;
+            var bounds = canvas[0].getBoundingClientRect();
+            x = (e.clientX - bounds.left) * canvas[0].width / bounds.width;
+            y = (e.clientY - bounds.top) * canvas[0].height / bounds.height;
+            canvas.toggleClass('hand', seed.hover(x, y));
+        });
+
+        var seedAnimate = eval(Jscex.compile("async", function () {
+            seed.draw();
+            while (hold) {
+                $await(Jscex.Async.sleep(10));
+            }
+            while (seed.canScale()) {
+                seed.scale(0.95);
+                $await(Jscex.Async.sleep(10));
+            }
+            while (seed.canMove()) {
+                seed.move(0, 2);
+                foot.draw();
+                $await(Jscex.Async.sleep(10));
+            }
+        }));
+
+        var growAnimate = eval(Jscex.compile("async", function () {
+            do {
+                tree.grow();
+                $await(Jscex.Async.sleep(10));
+            } while (tree.canGrow());
+        }));
+
+        var flowAnimate = eval(Jscex.compile("async", function () {
+            do {
+                tree.flower(2);
+                $await(Jscex.Async.sleep(10));
+            } while (tree.canFlower());
+        }));
+
+        var moveAnimate = eval(Jscex.compile("async", function () {
+            tree.snapshot("p1", 240, 0, 610, 680);
+            while (tree.move("p1", 500, 0)) {
+                foot.draw();
+                $await(Jscex.Async.sleep(10));
+            }
+            foot.draw();
+            tree.snapshot("p2", 500, 0, 610, 680);
+
+            canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
+            canvas.css("background", "#ffe");
+            $await(Jscex.Async.sleep(300));
+            canvas.css("background", "none");
+        }));
+
+        var textAnimate = eval(Jscex.compile("async", function () {
+            $("#code").show().typewriter();
+        }));
+	    
+        var runAsync = eval(Jscex.compile("async", function () {
+            $await(seedAnimate());
+            $await(growAnimate());
+            $await(flowAnimate());
+            $await(moveAnimate());
+            textAnimate().start();
+        }));
+
+        runAsync().start();
+    })();
+    </script>
 </body>
 </html>
